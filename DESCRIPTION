@@ -1,7 +1,7 @@
 Package: define
 Type: Package
 Title: Create FDA-Style Data and Program Definitions
-Version: 0.2.5
+Version: 0.2.7
 Author: Tim Bergsma [aut, cre],
  Scott Pivirotto [ctb]
 Maintainer: Tim Bergsma <bergsmat@gmail.com>
@@ -19,6 +19,6 @@ LazyData: TRUE
 Imports: Hmisc, SASxport, encode, spec, latexpdf
 RoxygenNote: 6.0.1
 NeedsCompilation: no
-Packaged: 2017-09-30 00:17:35 UTC; tbergsma
+Packaged: 2018-03-13 12:59:14 UTC; tbergsma
 Repository: CRAN
-Date/Publication: 2017-09-30 16:20:34 UTC
+Date/Publication: 2018-03-13 17:14:53 UTC

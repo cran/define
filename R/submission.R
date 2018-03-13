@@ -284,8 +284,7 @@ as.labeled.character <- function(
 #' @param check should the data.frame be required to match its specification?
 #' @param ... ignored
 #' @importFrom Hmisc label
-#' @importFrom Hmisc label.data.frame
-#' @importFrom Hmisc label<-.data.frame
+#' @importFrom Hmisc label<-
 #' @seealso \code{\link{as.labeled.character}}
 #' 
 as.labeled.data.frame <- function(x, label, spec, check = TRUE, ...){
@@ -349,14 +348,14 @@ as.labeled.data.frame <- function(x, label, spec, check = TRUE, ...){
 #' @import encode
 #' @describeIn .handle csv method for .handle
 #' 
-.handle.csv <- function(x,tag,dir,subdir,des,copy,...){
+.handle.csv <- function(x,tag,dir,subdir,des,copy,check = TRUE, ...){
   file <- sub('\\.csv$','.spec',x)
   spec <- if(file.exists(file)) read.spec(file) else specification(read.csv(x,as.is = TRUE,na.strings = c('','.')))
   if(!file.exists(file)) {
     message('creating ',file,'; edit and re-run as necessary')
     write.spec(spec,file)
   }
-  stopifnot(x %matches% spec)
+  if(check)stopifnot(x %matches% spec)
   spec$guide[encoded(spec)] <- recode(spec$guide[encoded(spec)]) # remove placeholder decodes
   file <- as.character(NA)
   if(copy){ 
@@ -470,6 +469,24 @@ as.labeled.data.frame <- function(x, label, spec, check = TRUE, ...){
 
 .handle.txt <- function(x,tag,dir,subdir,des,copy,...){
   file <-if(copy) .copy(x = x,tag = tag,dir = dir,subdir = subdir,ext = '.txt',...) else as.character(NA)
+  list(x = x,tag = tag,des = des,file = file,spec = NA)
+}
+#' Handle a define target that is a path to a pdf file.
+#' 
+#' Handles a path to a pdf file.
+
+#' @param x path to a pdf file
+#' @param tag short name
+#' @param dir directory for storing artifact
+#' @param subdir subdirectory relative to dir for storing artifact
+#' @param des description of item
+#' @param copy should x be copied to dir(/subdir)?
+#' @param ... passed along
+#' @describeIn .handle pdf method for .handle
+#' 
+
+.handle.pdf <- function(x,tag,dir,subdir,des,copy,...){
+  file <-if(copy) .copy(x = x,tag = tag,dir = dir,subdir = subdir,ext = '.pdf',...) else as.character(NA)
   list(x = x,tag = tag,des = des,file = file,spec = NA)
 }
 
