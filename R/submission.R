@@ -84,6 +84,7 @@
   pretable = paste('\\hline \\multicolumn{4}{|l|}{\\textbf{Contents}} \\\\'),
   prepos = 1,
   headerBold = TRUE,
+  reserve = FALSE,
   ...
 ){
   menu <- data.frame(
@@ -113,6 +114,7 @@
     colwidth = colwidth,
     tabularEnvironment = tabularEnvironment,
     walls = walls,
+    reserve = reserve,
     ...
   )
   menu <- append(menu,pretable,prepos)
@@ -609,7 +611,7 @@ as.document.submission <- function (
   specified <- sapply(x,function(i)!identical(NA,i[['spec']]))
   specified <- x[specified]
   
-  specify <- function(x,sep = ' : ',collapse = '\n\n', units = FALSE, ...){
+  specify <- function(x,sep = ' : ',collapse = '\n\n', units = FALSE, reserve = FALSE, ...){
     caption <- x[['tag']]
     spec <- x[['spec']]
     des <- x[['des']]
@@ -617,7 +619,7 @@ as.document.submission <- function (
     if(units)spec$guide[!is.na(text)] <- sapply(text[!is.na(text)],encode,sep = '|')
     def <- as.define(spec,sep = sep,collapse = collapse,...)
     #tab <- tabular(def,caption = caption,...)
-    tab <- as.tabular(def,...)
+    tab <- as.tabular(def,, reserve = FALSE, ...)
     tab <- wrap(tab,'center')
     link <- .hyperlink(caption,des)
     parens <- function(x,...)paste0("(", x, ")")
