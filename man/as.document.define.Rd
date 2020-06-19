@@ -4,26 +4,33 @@
 \alias{as.document.define}
 \title{Coerce to Document from Define}
 \usage{
-\method{as.document}{define}(x, morePreamble = command("usepackage", args =
-  "longtable"), geoLeft = "1in", geoRight = "1in", geoTop = "1in",
-  geoBottom = "1in", pagestyle = command("pagestyle", args = "plain"), ...)
+\method{as.document}{define}(
+  x,
+  morePreamble = command("usepackage", args = "longtable"),
+  geoLeft = "1in",
+  geoRight = "1in",
+  geoTop = "1in",
+  geoBottom = "1in",
+  pagestyle = command("pagestyle", args = "plain"),
+  ...
+)
 }
 \arguments{
 \item{x}{passed to \code{\link{as.tabular.define}}}
 
-\item{morePreamble}{passed to \code{\link[latexpdf]{as.document.character}}}
+\item{morePreamble}{passed to \code{latexpdf::as.document.character}}
 
-\item{geoLeft}{passed to \code{\link[latexpdf]{as.document.character}}}
+\item{geoLeft}{passed to \code{latexpdf::as.document.character}}
 
-\item{geoRight}{passed to \code{\link[latexpdf]{as.document.character}}}
+\item{geoRight}{passed to \code{latexpdf::as.document.character}}
 
-\item{geoTop}{passed to \code{\link[latexpdf]{as.document.character}}}
+\item{geoTop}{passed to \code{latexpdf::as.document.character}}
 
-\item{geoBottom}{passed to \code{\link[latexpdf]{as.document.character}}}
+\item{geoBottom}{passed to \code{latexpdf::as.document.character}}
 
-\item{pagestyle}{passed to \code{\link[latexpdf]{as.document.character}}}
+\item{pagestyle}{passed to \code{latexpdf::as.document.character}}
 
-\item{...}{passed to \code{\link[latexpdf]{as.document.character}} and \code{\link{as.tabular.define}}}
+\item{...}{passed to \code{latexpdf::as.document.character} and \code{\link{as.tabular.define}}}
 }
 \description{
 Coerces to class 'document' from class 'define'.

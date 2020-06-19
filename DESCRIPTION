@@ -1,7 +1,7 @@
 Package: define
 Type: Package
 Title: Create FDA-Style Data and Program Definitions
-Version: 0.2.8
+Version: 0.2.9
 Author: Tim Bergsma [aut, cre],
  Scott Pivirotto [ctb]
 Maintainer: Tim Bergsma <bergsmat@gmail.com>
@@ -17,8 +17,8 @@ Description: Creates a directory of archived files with a descriptive 'PDF'
 License: GPL-3
 LazyData: TRUE
 Imports: Hmisc, SASxport, encode, spec, latexpdf
-RoxygenNote: 6.0.1
+RoxygenNote: 7.1.0
 NeedsCompilation: no
-Packaged: 2018-10-15 11:59:49 UTC; tbergsma
+Packaged: 2020-06-18 22:17:52 UTC; tim.bergsma
 Repository: CRAN
-Date/Publication: 2018-10-15 12:20:03 UTC
+Date/Publication: 2020-06-19 12:50:06 UTC

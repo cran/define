@@ -4,13 +4,33 @@
 \alias{as.document.submission}
 \title{Coerce a submission object to a document.}
 \usage{
-\method{as.document}{submission}(x, title, short = title, protocol = "~",
-  sponsor = "~", program = "~", author = "~",
-  date = "\\\\mydate \\\\today", lhead1 = short, lhead2 = protocol,
-  rhead1 = sponsor, rhead2 = program, lfoot = author, rfoot = date,
-  logo = NULL, logoscale = 1, morePreamble = NULL, geoLeft = "1in",
-  geoRight = "1in", geoTop = "1in", geoBottom = "1in", pagestyle = NULL,
-  thispagestyle = NULL, units = FALSE, ...)
+\method{as.document}{submission}(
+  x,
+  title,
+  short = title,
+  protocol = "~",
+  sponsor = "~",
+  program = "~",
+  author = "~",
+  date = "\\\\mydate \\\\today",
+  lhead1 = short,
+  lhead2 = protocol,
+  rhead1 = sponsor,
+  rhead2 = program,
+  lfoot = author,
+  rfoot = date,
+  logo = NULL,
+  logoscale = 1,
+  morePreamble = NULL,
+  geoLeft = "1in",
+  geoRight = "1in",
+  geoTop = "1in",
+  geoBottom = "1in",
+  pagestyle = NULL,
+  thispagestyle = NULL,
+  units = FALSE,
+  ...
+)
 }
 \arguments{
 \item{x}{a list of artifacts each having attributes: x, tag, des, file, spec}
@@ -45,19 +65,19 @@
 
 \item{logoscale}{size adjustment for logo}
 
-\item{morePreamble}{if NULL, a special value is passed to \code{\link[latexpdf]{as.document.character}}.  See function definition for details, and override if necessary.}
+\item{morePreamble}{if NULL, a special value is passed to \code{latexpdf::as.document.character}.  See function definition for details, and override if necessary.}
 
-\item{geoLeft}{passed to \code{\link[latexpdf]{as.document.character}}}
+\item{geoLeft}{passed to \code{latexpdf::as.document.character}}
 
-\item{geoRight}{passed to \code{\link[latexpdf]{as.document.character}}}
+\item{geoRight}{passed to \code{latexpdf::as.document.character}}
 
-\item{geoTop}{passed to \code{\link[latexpdf]{as.document.character}}}
+\item{geoTop}{passed to \code{latexpdf::as.document.character}}
 
-\item{geoBottom}{passed to \code{\link[latexpdf]{as.document.character}}}
+\item{geoBottom}{passed to \code{latexpdf::as.document.character}}
 
-\item{pagestyle}{passed to \code{\link[latexpdf]{as.document.character}}}
+\item{pagestyle}{passed to \code{latexpdf::as.document.character}}
 
-\item{thispagestyle}{passed to \code{\link[latexpdf]{as.document.character}}}
+\item{thispagestyle}{passed to \code{latexpdf::as.document.character}}
 
 \item{units}{Should units for continuous variables be printed in Codes column?}
 
